@@ -1,6 +1,6 @@
 /* For demo */
 .banner-user{
-  height: 330px;
+  height: 560px;
   width: 100%;
 }
 
@@ -30,4 +30,8 @@
   .banner-user{
     height: 100px!important;
   }
+}
+
+.search-nav .ant-input-wrapper{
+  border-radius: 150px;
 }

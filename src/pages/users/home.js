@@ -6,12 +6,22 @@ import Ofertas from './Ofertas/ofertasHome';
 import Datos_tienda from './Datos_tienda/datos_tienda'
 import Banner_Promocion from './BannerPromociones/BannerPromocion'
 import './home.scss'
+import Categorias from '../../components/Categorias/Categorias';
 
 export default function Home(props) {
 
 	return (
 		<div>
-			<Carousel />
+			<div>
+				<div className="container-prin">
+					<div className="container-categorias">
+						<Categorias />
+					</div>
+					<div className="col-lg-12 container-carrusel">
+						<Carousel />
+					</div>
+				</div>
+			</div>
 			<div className="contenedor-home-background">
 				<div className="row contenedor-home-banner">
 					<div className="text-center textos-home col-lg-4 col-12">

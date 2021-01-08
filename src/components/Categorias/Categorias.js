@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Layout, Menu } from 'antd';
+import { Divider, Layout, Menu } from 'antd';
 import { withRouter } from 'react-router-dom';
 import './categorias.scss';
 import './preloading.scss';
@@ -64,7 +64,7 @@ const Categorias = (props) => {
 				className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat"
 				onTitleClick={(e) => {
 					if(e.key === categoria.categoria){
-						props.history.push(`/categorias/${categoria.categoria}`);
+						// props.history.push(`/categorias/${categoria.categoria}`);
 						setCategoriaSeleccionada(categoria.categoria);
 						setSubcategoriaSeleccionada();
 					}
@@ -75,13 +75,14 @@ const Categorias = (props) => {
 				{categoria.subcCategoria.map((sub) => {
 					return (
 						<Menu.Item
-							/* className="nav-font-color-categorias" */
+							// /* className="nav-font-color-categorias" */
 							key={sub._id}
 							onClick={() => {
 								props.history.push(`/categorias/${categoriaSeleccionada}/${sub._id}`);
 								setSubcategoriaSeleccionada(sub._id);
 							}}
 						>
+							
 							{sub._id}
 						</Menu.Item>
 					);
@@ -104,7 +105,6 @@ const Categorias = (props) => {
 						props.history.push(`/categoria/${categoriaSeleccionada}/${subcategoriaSeleccionada}/${generos._id}`)
 					}
 				}}
-				
 			>
 				{generos._id}
 			</Menu.Item>
@@ -112,24 +112,25 @@ const Categorias = (props) => {
 	});
 
 	return (
-		<Layout className="container-subcategorias-nav d-lg-inline size-layout-cat">
+		<Layout className="container-subcategorias-nav size-layout-cat" >
+			{/* className="container-subcategorias-nav d-lg-inline size-layout-cat" */}
 			{/* <Spin className="ml-5 d-inline spin-nav-categorias" spinning={loading} /> */}
-			<Menu
-				className="categorias-navbar d-inline size-menu-cat"
-				theme="light"
-				mode="horizontal"
-				defaultSelectedKeys={[ window.location.pathname ]}
-				triggerSubMenuAction="click"
-			>
-				{categorias_nav}
-				{generos.length !== 0 ? (
-					<SubMenu title="Género" className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat">
-						{categorias_generos}
-					</SubMenu>
-				) : (
-					<Menu.Item className="d-none" />
-				)}
-			</Menu>
+				<h6 className="text-center">Departamentos</h6>
+				<Menu
+					className=" d-inline size-menu-cat"
+					defaultSelectedKeys={[ window.location.pathname ]}
+					triggerSubMenuAction="click"
+				>
+					
+					{categorias_nav}
+					{generos.length !== 0 ? (
+						<SubMenu title="Género" className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat">
+							{categorias_generos}
+						</SubMenu>
+					) : (
+						<Menu.Item className="d-none" />
+					)}
+				</Menu>
 		</Layout>
 	);
 };

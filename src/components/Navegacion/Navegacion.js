@@ -11,6 +11,7 @@ import clienteAxios from '../../config/axios';
 import RightMenu from './RightMenu';
 import { MenuContext } from '../../context/carritoContext';
 import aws from '../../config/aws';
+import './navegacion.scss';
 
 const { Search } = Input;
 const { Header } = Layout;
@@ -107,12 +108,16 @@ const Navegacion = (props) => {
 		);
 	}
 
+	function valor(e) {
+		
+	}
+
 	return (
 		<Layout className="layout navbar-menu-general a0">
 			<Header className="navbar-menu-general a1">
 				<div className="menuCon navbar-menu-general a2">
 					<div className="top-menu row a3">
-						<div className="col-lg-4 row-logo-search">
+						<div className="col-lg-7 row-logo-search">
 							<div className="row row-logo-search-2">
 								{!tienda.imagenLogo ? (
 									<div className="d-none" />
@@ -130,15 +135,22 @@ const Navegacion = (props) => {
 									</div>
 								)}
 								<div className="col-lg-8">
-									<Search
-										placeholder="¿Qué estás buscando?"
+									{/* <Search
+										placeholder="Buscar productos"
 										onSearch={(value) => props.history.push(`/searching/${value}`)}
 										className="search-navbar"
-									/>
+										size="large"
+									/> */}
+									<Input
+										onChange={valor}
+									>
+									</Input>
+									
+									
 								</div>
 							</div>
 						</div>
-						<div className="col-lg-8 nav-menu-enlaces a4 ">
+						<div className="col-lg-5 nav-menu-enlaces a4 ">
 							<Menu
 								className="float-right navbar-menu-general a5"
 								/* theme="light" */
