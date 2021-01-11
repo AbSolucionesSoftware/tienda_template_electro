@@ -21,6 +21,7 @@ const Navegacion = (props) => {
 	const { active, setActive } = useContext(MenuContext);
 	const { loading, setLoading } = useContext(MenuContext);
 	const [ visible, setVisible ] = useState(false);
+	const [ busqueda, setBusqueda] = useState("")
 	const token = localStorage.getItem('token');
 	var decoded = Jwt(token);
 
@@ -109,7 +110,7 @@ const Navegacion = (props) => {
 	}
 
 	function valor(e) {
-		
+		setBusqueda(e.target.value);
 	}
 
 	return (
@@ -145,6 +146,11 @@ const Navegacion = (props) => {
 										onChange={valor}
 									>
 									</Input>
+									<Button
+										onClick={(value) => props.history.push(`/searching/${busqueda}`)}
+									>
+									 Buscar
+									</Button>
 									
 									
 								</div>
