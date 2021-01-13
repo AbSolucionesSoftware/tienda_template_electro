@@ -5,13 +5,15 @@ import * as firebase from 'firebase/app';
 import './navegacion.scss';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { MenuOutlined, ShoppingCartOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons';
+import { SearchOutlined, MenuOutlined, ShoppingCartOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 import jwt_decode from 'jwt-decode';
 import clienteAxios from '../../config/axios';
 import RightMenu from './RightMenu';
 import { MenuContext } from '../../context/carritoContext';
 import aws from '../../config/aws';
 import './navegacion.scss';
+import Categorias from '../../components/Categorias/Categorias';
+
 
 const { Search } = Input;
 const { Header } = Layout;
@@ -114,11 +116,12 @@ const Navegacion = (props) => {
 	}
 
 	return (
+		<div>
 		<Layout className="layout navbar-menu-general a0">
 			<Header className="navbar-menu-general a1">
 				<div className="menuCon navbar-menu-general a2">
 					<div className="top-menu row a3">
-						<div className="col-lg-7 row-logo-search">
+						<div className="col-lg-9 row-logo-search">
 							<div className="row row-logo-search-2">
 								{!tienda.imagenLogo ? (
 									<div className="d-none" />
@@ -135,28 +138,21 @@ const Navegacion = (props) => {
 										</Link>
 									</div>
 								)}
-								<div className="col-lg-8">
-									{/* <Search
-										placeholder="Buscar productos"
-										onSearch={(value) => props.history.push(`/searching/${value}`)}
-										className="search-navbar"
-										size="large"
-									/> */}
+								<div className="col-lg-8 row" style={{marginTop: 5}}>
 									<Input
 										onChange={valor}
-									>
-									</Input>
+										className="input-search border-color-search"
+									/>
 									<Button
 										onClick={(value) => props.history.push(`/searching/${busqueda}`)}
+										className="boton-search border-color-search"
 									>
-									 Buscar
+										<SearchOutlined style={{fontSize: 25}}/>
 									</Button>
-									
-									
 								</div>
 							</div>
 						</div>
-						<div className="col-lg-5 nav-menu-enlaces a4 ">
+						<div className="col-lg-3 nav-menu-enlaces a4 ">
 							<Menu
 								className="float-right navbar-menu-general a5"
 								/* theme="light" */
@@ -164,34 +160,8 @@ const Navegacion = (props) => {
 								defaultSelectedKeys={[ window.location.pathname ]}
 								inlineIndent={0}
 							>
-								<Menu.Item className="nav-font-color nav-border-color a6" key="/">
-									<div className="centrar-nav" >Inicio</div>
-									<Link to="/" />
-								</Menu.Item>
-								<Menu.Item className="nav-font-color nav-border-color a6" key="/productos">
-									<div className="centrar-nav" >Productos</div>
-									<Link to="/productos" />
-								</Menu.Item>
-								{ofertas.length ? (
-									<Menu.Item className="nav-font-color nav-border-color a6" key="/ofertas">
-										<div className="centrar-nav" >Ofertas</div>
-										<Link to="/ofertas" />
-									</Menu.Item>
-								) : (
-									<Menu.Item className="d-none" />
-								)}
-								<Menu.Item className="nav-font-color nav-border-color a6" key="/blog">
-									<div className="centrar-nav" >Blog</div>
-									<Link to="/blog" />
-								</Menu.Item>
-								{tienda.length === 0 ? (
-									<Menu.Item className="d-none" />
-								) : (
-									<Menu.Item className="nav-font-color nav-border-color a6" key="/quienes_somos">
-										<div className="centrar-nav" >Quiénes somos</div>
-										<Link to="/quienes_somos" />
-									</Menu.Item>
-								)}
+								
+								
 								{!decoded || decoded.rol === true ? (
 									<Menu.Item className="d-none" />
 								) : (
@@ -313,6 +283,9 @@ const Navegacion = (props) => {
 								</Badge>
 							</div>
 						)}
+						<div className="col-lg-3 containe-categorias">
+							<Categorias/>
+						</div>
 					</div>
 					<Drawer
 						className="drawer-background"
@@ -341,6 +314,57 @@ const Navegacion = (props) => {
 				</div>
 			</Header>
 		</Layout>
+		<Layout className="layout navbar-menu-general a0">
+			<Header className="navbar-menu-general a1">
+				<div className="menuCon navbar-menu-general a2">
+					<div className="top-menu row a3 container-prin">
+						<div className="col-lg-4 containe-categorias">
+							<Categorias/>
+						</div>
+						<div className="col-lg-8 container-pages">
+							<Menu
+								className="float-right navbar-menu-general a5"
+								/* theme="light" */
+								mode="horizontal"
+								defaultSelectedKeys={[ window.location.pathname ]}
+								inlineIndent={0}
+							>
+								<Menu.Item className="nav-font-color nav-border-color a6" key="/">
+									<div className="centrar-nav" >Inicio</div>
+									<Link to="/" />
+								</Menu.Item>
+
+								<Menu.Item className="nav-font-color nav-border-color a6" key="/productos">
+									<div className="centrar-nav" >Productos</div>
+									<Link to="/productos" />
+								</Menu.Item>
+								{ofertas.length ? (
+									<Menu.Item className="nav-font-color nav-border-color a6" key="/ofertas">
+										<div className="centrar-nav" >Ofertas</div>
+										<Link to="/ofertas" />
+									</Menu.Item>
+								) : (
+									<Menu.Item className="d-none" />
+								)}
+								<Menu.Item className="nav-font-color nav-border-color a6" key="/blog">
+									<div className="centrar-nav" >Blog</div>
+									<Link to="/blog" />
+								</Menu.Item>
+								{tienda.length === 0 ? (
+									<Menu.Item className="d-none" />
+								) : (
+									<Menu.Item className="nav-font-color nav-border-color a6" key="/quienes_somos">
+										<div className="centrar-nav" >Quiénes somos</div>
+										<Link to="/quienes_somos" />
+									</Menu.Item>
+								)}
+							</Menu>
+						</div>
+					</div>
+				</div>
+			</Header>
+		</Layout>
+		</div>
 	);
 };
 

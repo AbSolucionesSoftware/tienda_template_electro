@@ -13,14 +13,9 @@ export default function Home(props) {
 	return (
 		<div>
 			<div>
-				<div className="container-prin">
-					<div className="container-categorias">
-						<Categorias />
-					</div>
 					<div className="col-lg-12 container-carrusel">
 						<Carousel />
 					</div>
-				</div>
 			</div>
 			<div className="contenedor-home-background">
 				<div className="row contenedor-home-banner">
@@ -38,7 +33,7 @@ export default function Home(props) {
 					</div>
 				</div>
 			</div>
-			<Ofertas />
+			{/* <Ofertas /> */}
 			<Banner_Promocion />
 			{/* <ConsultaProductos propiedades={props} /> */}
             <Datos_tienda />

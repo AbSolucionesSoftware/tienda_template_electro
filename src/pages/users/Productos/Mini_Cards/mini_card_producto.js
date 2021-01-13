@@ -1,10 +1,10 @@
 import React from 'react';
-import aws from '../../../config/aws';
+import aws from '../../../../config/aws';
 import DOMPurify from 'dompurify';
-import { Card, Button } from 'antd';
+import { Card } from 'antd';
 import { Link } from 'react-router-dom';
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import { formatoMexico, agregarPorcentaje } from '../../../config/reuserFunction';
+import { formatoMexico, agregarPorcentaje } from '../../../../config/reuserFunction';
+import './mini_cards.scss'
 
 const gridStyle = { width: '100%', padding: 0, marginBottom: '1.5rem' };
 
@@ -15,16 +15,10 @@ export default function ComponenteProductos(props) {
 		return (
 			<div key={productos._id} className="size-col col-lg-2 col-6">
 				<Link to={`/vista_producto/${productos.productoPromocion._id}`}>
-					<Card
-						hoverable 
-						style={gridStyle} 
-						className="contenedor-card-producto-principal" 
-						bordered={false}
-					>
+					<Card.Grid hoverable style={gridStyle} className="border contenedor-card-producto-principal">
 						<Card
-							bordered={false}
-						>
-							<div>
+							className="contenedor-card-body"
+							cover={
 								<div className="contenedor-imagen-oferta">
 									<div className="contenedor-oferta">
 										<h5 className="shadow">OFERTA</h5>
@@ -37,7 +31,8 @@ export default function ComponenteProductos(props) {
 										/>
 									</div>
 								</div>
-							</div>
+							}
+						>
 							<div className="contenedor-titulos-productos titulo-elipsis">
 								<h1 className="titulo-producto">{productos.productoPromocion.nombre}</h1>
 								<div
@@ -61,7 +56,7 @@ export default function ComponenteProductos(props) {
 								</p>
 							</div>
 						</Card>
-					</Card>
+					</Card.Grid>
 				</Link>
 			</div>
 		);
@@ -69,24 +64,9 @@ export default function ComponenteProductos(props) {
 		return (
 			<div key={productos._id} className="size-col col-lg-2 col-6">
 				<Link to={`/vista_producto/${productos._id}`}>
-					<Card
-						hoverable 
-						style={gridStyle} 
-						className="contenedor-card-producto-principal" 
-						bordered={false}
-					>
-						
-					
-						<div className="contenedor-titulos-productos titulo-elipsis">
-							<h1 className="titulo-producto">{productos.nombre}</h1>
-							{/* <div
-								dangerouslySetInnerHTML={{
-									__html: DOMPurify.sanitize(productos.descripcion)
-								}}
-							/> */}
-						</div>
+					<Card.Grid hoverable style={gridStyle} className="border contenedor-card-producto-principal">
 						<Card
-							bordered={false}
+							className="contenedor-card-body"
 							cover={
 								<div className="contenedor-imagen-oferta">
 									{productos.promocion.length !== 0 ? (
@@ -112,41 +92,37 @@ export default function ComponenteProductos(props) {
 								</div>
 							}
 						>
-							<div className="row">
-								<div className="col-lg-8">
-									{!productos.promocion.length ? (
-										<div className="contenedor-precios-productos">
-											<h3 className="h5 precio-rebaja">${formatoMexico(productos.precio)}</h3>
-										</div>
-									) : (
-										productos.promocion.map((promo) => {
-											return (
-												<div className="contenedor-precios-productos" key={promo._id}>
-													<h2 className="h5 precio-producto rebajado mr-2">
-														${formatoMexico(productos.precio)}
-													</h2>
-													<h3 className="h5 precio-rebaja d-inline mr-1">
-														${formatoMexico(promo.precioPromocion)}
-													</h3>
-													<p className="h4 porcentaje-descuento d-inline">
-														{agregarPorcentaje(promo.precioPromocion, productos.precio)}%OFF
-													</p>
-												</div>
-											);
-										})
-									)}
-								</div>
-								<div className="col-lg-4">
-									<Button
-										size="large"
-										shape="circle"
-										className="color-boton" 
-										icon={<ShoppingCartOutlined />} 
-									/>
-								</div>
+							<div className="contenedor-titulos-productos titulo-elipsis">
+								<h1 className="titulo-producto">{productos.nombre}</h1>
+								<div
+									dangerouslySetInnerHTML={{
+										__html: DOMPurify.sanitize(productos.descripcion)
+									}}
+								/>
 							</div>
+							{!productos.promocion.length ? (
+								<div className="contenedor-precios-productos">
+									<h3 className="h5 precio-rebaja">${formatoMexico(productos.precio)}</h3>
+								</div>
+							) : (
+								productos.promocion.map((promo) => {
+									return (
+										<div className="contenedor-precios-productos" key={promo._id}>
+											<h2 className="h5 precio-producto rebajado mr-2">
+												${formatoMexico(productos.precio)}
+											</h2>
+											<h3 className="h5 precio-rebaja d-inline mr-1">
+												${formatoMexico(promo.precioPromocion)}
+											</h3>
+											<p className="h4 porcentaje-descuento d-inline">
+												{agregarPorcentaje(promo.precioPromocion, productos.precio)}%OFF
+											</p>
+										</div>
+									);
+								})
+							)}
 						</Card>
-					</Card>
+					</Card.Grid>
 				</Link>
 			</div>
 		);

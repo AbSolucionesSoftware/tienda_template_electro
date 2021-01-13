@@ -25,7 +25,7 @@ const Categorias = (props) => {
 	}, []);
 
 	async function obtenerCategorias() {
-		setLoading(true);
+		// setLoading(true);
 		await clienteAxios
 			.get('/productos/filtrosNavbar', {
 				headers: {
@@ -59,6 +59,7 @@ const Categorias = (props) => {
 	const categorias_nav = categorias.map((categoria) => {
 		return (
 			<SubMenu
+				mode="vertical"
 				key={categoria.categoria}
 				title={categoria.categoria}
 				className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat"
@@ -70,7 +71,6 @@ const Categorias = (props) => {
 					}
 					
 				}}
-
 			>
 				{categoria.subcCategoria.map((sub) => {
 					return (
@@ -80,9 +80,9 @@ const Categorias = (props) => {
 							onClick={() => {
 								props.history.push(`/categorias/${categoriaSeleccionada}/${sub._id}`);
 								setSubcategoriaSeleccionada(sub._id);
+
 							}}
 						>
-							
 							{sub._id}
 						</Menu.Item>
 					);
@@ -94,6 +94,7 @@ const Categorias = (props) => {
 	const categorias_generos = generos.map((generos) => {
 		return (
 			<Menu.Item
+				mode="vertical"
 				/* className="nav-font-color-categorias " */
 				key={generos._id}
 				onClick={() => {
@@ -115,21 +116,31 @@ const Categorias = (props) => {
 		<Layout className="container-subcategorias-nav size-layout-cat" >
 			{/* className="container-subcategorias-nav d-lg-inline size-layout-cat" */}
 			{/* <Spin className="ml-5 d-inline spin-nav-categorias" spinning={loading} /> */}
-				<h6 className="text-center">Departamentos</h6>
+				{/* <div className="border-departamento">
+					<h6 className="text-center" style={{marginTop: 10}}>Departamentos</h6>
+				</div> */}
 				<Menu
-					className=" d-inline size-menu-cat"
+					inlineCollapsed={false}
+				>
+				<SubMenu
+					title="Departamentos"
+					className="d-inline size-menu-cat"
 					defaultSelectedKeys={[ window.location.pathname ]}
 					triggerSubMenuAction="click"
-				>
-					
-					{categorias_nav}
-					{generos.length !== 0 ? (
-						<SubMenu title="Género" className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat">
-							{categorias_generos}
-						</SubMenu>
-					) : (
-						<Menu.Item className="d-none" />
-					)}
+				>				
+						{categorias_nav}
+						{generos.length !== 0 ? (
+							<SubMenu 
+								title="Género"
+								mode="vertical"
+								className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat"
+							>
+								{categorias_generos}
+							</SubMenu>
+						) : (
+							<Menu.Item className="d-none" />
+						)}
+				</SubMenu>
 				</Menu>
 		</Layout>
 	);

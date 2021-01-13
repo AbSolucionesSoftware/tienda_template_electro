@@ -1,7 +1,7 @@
 .principal-productos{
-    color: rgb(255, 255, 255);
+    color: white;
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(48, 48, 48);
     padding: 15px;
     font-size: 25px;
     letter-spacing: 20px;
@@ -15,7 +15,6 @@
     width: 100%;
 }
 .titulo-elipsis{
-    padding: 5px;
     height: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -45,14 +44,14 @@
     left: 0;
 }
 .contenedor-card-producto-principal:hover .titulo-elipsis{
-    height: 70px;
+    height: 100px;
     transition-duration: .2s;
     transition-delay: .4s;
     /* transition: ease-out .2s; */
 }
 .contenedor-imagen-producto-principal{
     height: 250px; 
-    width: 250px;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +105,3 @@
         min-width: 170px;
     }
 }
-
-
-

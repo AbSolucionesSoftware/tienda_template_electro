@@ -8,10 +8,9 @@
   background-color: white;
 }
 .contenedor-logo{
-  margin-top: 8px;
-  margin-left: 25px;
-  height: 85px;
-  width: 195px;
+  margin-left: 20%;
+  height: 95px;
+  width: 205px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +35,7 @@
 }
 .navbar-menu-general{
   border: none;
+  
 }
 .search-navbar{
   width: 100%;
@@ -46,6 +46,7 @@
   padding: 0 20px!important;
 } */
 
+
 /* TAMAÑOS NAV PRINCIPAL */
 .row-logo-search{
   height: 100%!important;
@@ -54,9 +55,8 @@
   display: flex;
   align-items: center;
 }
-
 .a0{
-  height: 100px;
+  height: 80px;
 }
 .a1{
   height: 100%;
@@ -70,19 +70,15 @@
   height: 100%;
   display: flex;
   align-items: center;
-  
 }
 .a4{
-  height: 100%;
-  
+  height: 100px;
 }
 .a5{
   height: 100%;
-  
 }
 .a6{
   height: 100%;
-  
 }
 .a6 > .centrar-nav, .ant-menu-submenu-title {
   height: 100%;
@@ -115,3 +111,29 @@
     width: 89%;
   }
 }
+
+.input-search{
+  width: 85%;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: 43px;
+ 
+}
+.boton-search{
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 43px;
+}
+.containe-categorias{
+  position: absolute;
+  margin-left: 25px;
+  top: 15%;
+  z-index: 60;
+}
+.container-pages{
+  // position: ;
+  z-index: 50;
+}
+// .container-prin{
+//   position: relative;
+// }

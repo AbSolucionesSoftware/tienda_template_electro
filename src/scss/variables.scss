@@ -134,6 +134,9 @@ p, a, li{
 .container-subcategorias-nav > .ant-menu-submenu-title:hover{
     color: $font-color-navbar-categorias-hover!important;
 }
+.border-color-search{
+    border: 2px solid $font-color-navbar-active;
+}
 
 
 /* SEPARADORES */
@@ -150,8 +153,8 @@ p, a, li{
 /* CARDS */
 .contenedor-card-body > .ant-card-body{
     padding: 10px;
-    background-color: $bg-color-cards-productos; 
-    min-height: 100px;
+    // background-color: $bg-color-cards-productos; 
+    min-height: 90px;
 }
 
 /* SPINER */
@@ -263,7 +266,7 @@ p, a, li{
 
 // G A L E R I A
 .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
-    border: 2px solid $bg-color-navbar;
+    border: .5px solid $bg-color-navbar;
 }
 
 
