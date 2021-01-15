@@ -253,7 +253,7 @@ const Navegacion = (props) => {
 								)}
 
 								{token === '' || token === null ? (
-									<Menu.Item className="nav-font-color nav-border-color a6">
+									<Menu.Item className="nav-font-color nav-border-color navbar-menu-general a6">
 										<div className="centrar-nav" >Entrar</div>
 										<Link to="/entrar" />
 									</Menu.Item>

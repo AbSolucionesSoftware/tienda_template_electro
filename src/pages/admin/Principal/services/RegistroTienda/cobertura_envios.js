@@ -176,7 +176,7 @@ export default function Cobertura_envios(props) {
     var nuevoEstado = {};
 
     //Condicion de registros y actualizacion
-    if (todos && dataEstados.length == 0) {
+    if (todos && dataEstados.length === 0) {
       nuevoEstado.todos = todos;
       clienteAxios
         .post(`/politicasEnvio/estados/`, nuevoEstado, {

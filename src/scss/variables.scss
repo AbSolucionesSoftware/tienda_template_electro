@@ -4,18 +4,18 @@ $color-blog: #ffff;
 
 /* NAVBAR VARIABLES */
 /* $bg-color-navbar: #B11F24; */
-$bg-color-navbar: #ffffff;
+$bg-color-navbar:  #0050e6;
 $bg-color-navbar-active: #ffffff;
-$border-color-active: #0050e6;
+$border-color-active: #ffffff;
 /* $border-color-navbar: #B11F24; */
-$font-color-navbar: rgb(0, 0, 0);
-$font-color-navbar-hover: #0050e6;
-$font-color-navbar-active: #0050e6;
+$font-color-navbar: rgb(255, 255, 255);
+$font-color-navbar-hover: #000000;
+$font-color-navbar-active: #000000;
 
 /* NAVBAR CATEGORIAS VARIABLES */
 $bg-color-navbar-categorias:  #ffffff;
 $font-color-navbar-categorias: rgb(0, 0, 0);
-$font-color-navbar-categorias-hover: #0050e6;
+$font-color-navbar-categorias-hover: #f9fafb;
 
 /* CARDS VARIABLES */
 $bg-color-cards-productos:  #F7F7F7;
@@ -52,7 +52,7 @@ $font-color-footer: rgb(0, 0, 0);
 $bg-layout: #ffff;
 
 /* FONT FAMILY STYLES */
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, .tabs-colors{
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -73,7 +73,7 @@ p, a, li{
     background-color: $bg-color-navbar;
 }
 .navbar-menu-general > .ant-menu-item-selected{
-    background-color: $bg-color-navbar-active!important;
+    // background-color: $bg-color-navbar-active!important;
 }
 .navbar-menu-general > .ant-menu-item-selected {
     color: $font-color-navbar-active!important;
@@ -115,8 +115,8 @@ p, a, li{
 }
 .container-subcategorias-nav{
     background-color: $bg-color-navbar-categorias;
-    border-bottom: solid $bg-color-navbar-categorias;
-    border-top: solid $bg-color-navbar-categorias;
+    // border-bottom: solid $bg-color-navbar-categorias;
+    // border: solid $bg-color-navbar-categorias;
 }
 .nav-font-color-categorias{
     color: $font-color-navbar-categorias;
@@ -155,6 +155,13 @@ p, a, li{
     padding: 10px;
     // background-color: $bg-color-cards-productos; 
     min-height: 90px;
+}
+.mini-contenedor-card-body > .ant-card-body{
+    min-height: 90px;
+    width: auto;
+}
+.color-contenedor-oferta-especial{
+    border: 2px solid $color-tabs;
 }
 
 /* SPINER */
@@ -234,14 +241,13 @@ p, a, li{
 
 
 /* TABS */
-.tabs-colors .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+.tabs-colors > .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
     color: $color-tabs;
 }
-
-.tabs-colors .ant-tabs-tab:hover{
+.tabs-colors > .ant-tabs-tab:hover{
     color: $color-tabs;
 }
-.tabs-colors .ant-tabs-ink-bar{
+.tabs-colors > .ant-tabs-ink-bar{
     background-color: $color-tabs-border!important;
 }
 

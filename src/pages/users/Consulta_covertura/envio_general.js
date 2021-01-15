@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import clienteAxios from "../../../config/axios";
 
-import { notification, Alert } from "antd";
+import { notification} from "antd";
 import { CheckCircleFilled } from '@ant-design/icons';
 
 

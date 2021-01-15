@@ -6,7 +6,7 @@ import { notification, Result } from 'antd';
 
 import '../Productos/productos.scss';
 import './bannerPromocion.scss'
-import ComponentProductos from '../Productos/componente_productos';
+import MiniCards from '../Productos/Card_Mini/mini_card_producto';
 import Spin from '../../../components/Spin';
 
 /* const gridStyle = { width: '100%', padding: 0, marginBottom: '1.5rem' }; */
@@ -52,9 +52,9 @@ function CardsProductos(props) {
 
 
 	const render = productos.map((productos, index) => {
-		if(index <= 5){
+		if(index <= 7){
 			return (
-				<ComponentProductos key={productos._id} productos={productos} />
+				<MiniCards key={productos._id} productos={productos} />
 			)
 		}	
 	});
@@ -65,7 +65,6 @@ function CardsProductos(props) {
 			<div className="mt-2 d-flex justify-content-center align-items-center">
 				<div className="justify-content-center align-items-center">
 					<div style={{ maxWidth: '95vw' }} className="row d-flex justify-content-center align-items-center">
-
 						{productos.length ? (
 							render
 						) : (

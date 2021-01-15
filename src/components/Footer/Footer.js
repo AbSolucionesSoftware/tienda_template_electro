@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import clienteAxios from '../../config/axios';
 import { Link } from 'react-router-dom';
-import {  Button,  Layout, Menu, List } from 'antd';
+import {  Button,  Layout} from 'antd';
 import aws from '../../config/aws';
 import jwt_decode from 'jwt-decode';
 
-import {FacebookFilled, InstagramFilled,LogoutOutlined, 
+import {FacebookFilled, InstagramFilled,
         TwitterCircleFilled, UserOutlined, KeyOutlined, 
         PhoneOutlined, SettingOutlined 
         } from '@ant-design/icons';
 import './footer.scss';
 import '../../scss/variables.scss'
-import SubMenu from 'antd/lib/menu/SubMenu';
+// import SubMenu from 'antd/lib/menu/SubMenu';
 
 const { Footer } = Layout;
 
@@ -34,7 +34,7 @@ const FooterPage = (props) => {
     const [insta, setInsta] = useState('')
     const [twitter, setTwitter] = useState('')
     const [imagenCorp, setImagenCorp] = useState('')
-    const [nombreCorp, setNombreCorp] = useState('')
+    // const [nombreCorp, setNombreCorp] = useState('')
     const [politicas, setPoliticas] = useState('')
     const [telefono, setTelefono] = useState('')
     const [tienda, setTienda] = useState([])
@@ -129,7 +129,7 @@ const FooterPage = (props) => {
                                 <PhoneOutlined className="mt-1" style={{fontSize: 55, marginLeft: 5}} />
                                 <div className="px-3">
                                     <p>Tienes preguntas? Contactanos!:</p> 
-                                    {telefono !== '' ? (<h1 style={{fontSize: 25}}>{telefono} </h1>): ""}
+                                    {telefono !== '' ? (<h1 style={{fontSize: 20}}>{telefono} </h1>): ""}
                                 </div>
                             </div>
                             <div className="mt-3">

@@ -117,7 +117,6 @@
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   height: 43px;
- 
 }
 .boton-search{
   border-top-right-radius: 50px;
@@ -125,10 +124,11 @@
   height: 43px;
 }
 .containe-categorias{
+  width: 100px;
   position: absolute;
-  margin-left: 25px;
+  margin-left: 6%;
   top: 15%;
-  z-index: 60;
+  z-index: 70;
 }
 .container-pages{
   // position: ;

@@ -8,7 +8,6 @@ import {
   notification,
   Alert,
   Steps,
-  message,
   Spin,
 } from "antd";
 import {
@@ -25,10 +24,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function RegistroTienda(props) {
-  const { drawnerClose } = props;
+  // const { drawnerClose } = props;
   const [current, setCurrent] = props.steps;
 
-  const { datosNegocio, token, /* setLoading, */ setReloadInfo } = props;
+  const { datosNegocio, token, /* setLoading, */ } = props;
 
   const [datos, setDatos] = useState({});
   const [control, setControl] = useState(false);
@@ -51,9 +50,9 @@ export default function RegistroTienda(props) {
     setCurrent(current + 1);
   };
 
-  const prev = () => {
-    setCurrent(current - 1);
-  };
+  // const prev = () => {
+  //   setCurrent(current - 1);
+  // };
 
   useEffect(() => {
     if (datosNegocio !== undefined) {
@@ -460,6 +459,7 @@ export default function RegistroTienda(props) {
                       href="https://www.google.com.mx/maps/preview"
                       target="_blank"
                       style={{ fontSize: 16 }}
+                      rel="No hay pagina que mostar"
                     >
                       Ir a Google Maps
                       <FontAwesomeIcon

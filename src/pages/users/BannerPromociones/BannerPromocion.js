@@ -3,16 +3,16 @@ import React, { useState, useEffect } from 'react';
 
 import './bannerPromocion.scss'
 import CardsProductos from './cardsProductos';
-
+import { Tabs} from 'antd';
 import clienteAxios from '../../../config/axios';
-import {Link, withRouter } from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import aws from '../../../config/aws';
 
-import TweenOne from 'rc-tween-one';
+// import TweenOne from 'rc-tween-one';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import 'rc-banner-anim/assets/index.css';
 
-
+const { TabPane } = Tabs;
 
 const BgElement = Element.BgElement;
 
@@ -45,9 +45,17 @@ const BgElement = Element.BgElement;
         return (
             <div key={banner._id} className="mt-5 cont-principal">
                 {banner.mostrarTitulo !== false ? (
-                    <TweenOne key="demo" animation={{ y: 30, opacity: 0, type: 'from', delay: 800 }}>
-                        <h1 className="mt-5 tit-banner">{banner.categoria}</h1>
-                    </TweenOne>
+                    // <TweenOne key="demo" animation={{ y: 30, opacity: 0, type: 'from', delay: 800 }}>
+                    <div className="tit-banner tabs-colors">
+                        <Tabs>
+                            <TabPane tab={banner.categoria}>
+                                {/* <div className="div-titulo-banner">
+                                    <h1 className="mt-5 tit-banner">{}</h1>
+                                </div> */}
+                            </TabPane>
+                        </Tabs>
+                    </div>
+                    // </TweenOne>
                  ) : ""}
 
                 {banner.imagenBanner || banner.imagenBanner !== '' ? (

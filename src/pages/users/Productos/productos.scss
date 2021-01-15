@@ -33,6 +33,7 @@
     min-width: 190px;
 }
 .contenedor-card-producto-principal{
+    border-right: 1px solid #e0e0e0;
     cursor: pointer;
 }
 .contenedor-imagen-oferta{
@@ -44,15 +45,16 @@
     top: 0;
     left: 0;
 }
+
 .contenedor-card-producto-principal:hover .titulo-elipsis{
     height: 70px;
     transition-duration: .2s;
-    transition-delay: .4s;
+    transition-delay: .3s;
     /* transition: ease-out .2s; */
 }
 .contenedor-imagen-producto-principal{
-    height: 250px; 
-    width: 250px;
+    height: 230px; 
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +108,8 @@
         min-width: 170px;
     }
 }
-
+.card-precio-rebaja{
+    color:red;
+}
 
 

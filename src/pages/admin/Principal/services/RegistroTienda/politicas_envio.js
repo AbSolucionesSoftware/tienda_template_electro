@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Divider, Button, Alert, notification, Spin } from 'antd';
+import { Form, Input,Button, Alert, notification, Spin } from 'antd';
 import { PlusCircleOutlined, EditOutlined } from '@ant-design/icons';
 import clienteAxios from '../../../../../config/axios';
 import jwt_decode from 'jwt-decode';
@@ -7,9 +7,9 @@ import jwt_decode from 'jwt-decode';
 export default function PoliticasEnvio(props) {
 	const {setCurrent, current} = props;
 	// const {drawnerClose} = props;
-	const {next} = props;
+	// const {next} = props;
 
-	const { datosNegocio, setReloadInfo } = props;
+	const { datosNegocio } = props;
 	const [ disabled, setDisabled ] = useState(false);
 	const [ datos, setDatos ] = useState({});
 	const [ control, setControl ] = useState(false);
