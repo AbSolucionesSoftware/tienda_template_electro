@@ -14,7 +14,7 @@ export default function ComponenteProductos(props) {
 
 	if (productos.precioPromocion) {
 		return (
-			<div key={productos._id} className="size-col col-lg-2 col-6">
+			<div key={productos._id} className="size-col col-lg-3 col-6">
 				<Link to={`/vista_producto/${productos.productoPromocion._id}`}>
 					<Card
 						hoverable 
@@ -81,7 +81,7 @@ export default function ComponenteProductos(props) {
 		);
 	} else {
 		return (
-			<div key={productos._id} className="size-col col-lg-2 col-6">
+			<div key={productos._id} className="size-col col-lg-3 col-6">
 				<Link to={`/vista_producto/${productos._id}`}>
 					<Card
 						hoverable 

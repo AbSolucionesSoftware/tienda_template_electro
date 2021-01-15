@@ -46,8 +46,8 @@ const BgElement = Element.BgElement;
             <div key={banner._id} className="mt-5 cont-principal">
                 {banner.mostrarTitulo !== false ? (
                     // <TweenOne key="demo" animation={{ y: 30, opacity: 0, type: 'from', delay: 800 }}>
-                    <div className="tit-banner tabs-colors">
-                        <Tabs>
+                    <div className="tit-banner">
+                        <Tabs className="tabs-colors"  >
                             <TabPane tab={banner.categoria}>
                                 {/* <div className="div-titulo-banner">
                                     <h1 className="mt-5 tit-banner">{}</h1>

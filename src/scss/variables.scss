@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
-$color-blog: #ffff;
+$color-blog: rgb(255, 255, 255);
 
 /* NAVBAR VARIABLES */
 /* $bg-color-navbar: #B11F24; */
-$bg-color-navbar:  #0050e6;
-$bg-color-navbar-active: #ffffff;
-$border-color-active: #ffffff;
+$bg-color-navbar:  #2222a8;
+$bg-color-navbar-active: #000000;
+$border-color-active: #000000;
 /* $border-color-navbar: #B11F24; */
-$font-color-navbar: rgb(255, 255, 255);
-$font-color-navbar-hover: #000000;
-$font-color-navbar-active: #000000;
+$font-color-navbar: rgb(0, 0, 0);
+$font-color-navbar-hover: #2222a8;
+$font-color-navbar-active: #2222a8;
 
 /* NAVBAR CATEGORIAS VARIABLES */
 $bg-color-navbar-categorias:  #ffffff;
@@ -38,9 +38,9 @@ $font-color-steps-inactive: #ffff;
 $bg-color-steps-active: #1f80ff;
 $border-color-steps: #0042bd;
 /* TABS VARIABLES */
-$color-tabs: #1f80ff;
-$color-tabs-hover: #1c7eff;
-$color-tabs-border: #016fff;
+$color-tabs: #fed700;
+$color-tabs-hover: #fed700;
+$color-tabs-border: #fed700;
 
 $bg-color-tags: #cee3ff;
 
@@ -72,15 +72,17 @@ p, a, li{
 .navbar-menu-general{
     background-color: $bg-color-navbar;
 }
-.navbar-menu-general > .ant-menu-item-selected{
-    // background-color: $bg-color-navbar-active!important;
-}
 .navbar-menu-general > .ant-menu-item-selected {
     color: $font-color-navbar-active!important;
     border-bottom: 3px solid $border-color-active!important;
     /* border-top: 2px solid $border-color-active!important;
     border-bottom: none!important; */
 }
+.navbar-menu-sesion > .ant-menu-item-selected {
+    color: $bg-color-navbar!important;
+    border-bottom:  solid white!important;
+}
+
 .drawer-background .ant-drawer-body{
     background-color: $bg-color-navbar;
     border-color: rgb(255, 255, 255);
@@ -99,9 +101,16 @@ p, a, li{
     /* border-top: 2px solid $border-color-active!important;
     border-bottom: none!important; */
 }
+.nav-font-color-sesion:hover{
+    color: $bg-color-navbar!important;
+    border-bottom: 3px solid white!important;
+    /* border-top: 2px solid $border-color-active!important;
+    border-bottom: none!important; */
+}
 .menu-responsivo-icon{
     color: $font-color-navbar;
 }
+
 
 /* NAVBAR CATEGORIAS STYLES */
 .categorias-navbar{
@@ -119,6 +128,8 @@ p, a, li{
     // border: solid $bg-color-navbar-categorias;
 }
 .nav-font-color-categorias{
+  font-weight: bold;
+
     color: $font-color-navbar-categorias;
     border-bottom: none!important;
 } 
@@ -135,7 +146,12 @@ p, a, li{
     color: $font-color-navbar-categorias-hover!important;
 }
 .border-color-search{
-    border: 2px solid $font-color-navbar-active;
+    border: 2.5px solid $bg-color-navbar;
+}
+
+//COLOR DE BORDES DE LAS CARDS
+.contenedor-card-producto-principal{
+    border-right: 1px solid #e0e0e0;
 }
 
 
@@ -161,7 +177,7 @@ p, a, li{
     width: auto;
 }
 .color-contenedor-oferta-especial{
-    border: 2px solid $color-tabs;
+    border: 3px solid $bg-color-navbar;
 }
 
 /* SPINER */
@@ -241,15 +257,17 @@ p, a, li{
 
 
 /* TABS */
-.tabs-colors > .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+.tabs-colors >.ant-tabs-tab-active{
+    background-color: $color-tabs;
     color: $color-tabs;
+    
 }
-.tabs-colors > .ant-tabs-tab:hover{
-    color: $color-tabs;
-}
-.tabs-colors > .ant-tabs-ink-bar{
-    background-color: $color-tabs-border!important;
-}
+// .tabs-colors > .ant-tabs-tab:hover{
+//     color: $color-tabs;
+// }
+// .tabs-colors > .ant-tabs-ink-bar{
+//     background-color: $bg-color-navbar!important;
+// }
 
 
 /*  FOOTER STYLES */
