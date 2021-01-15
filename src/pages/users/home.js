@@ -2,6 +2,7 @@
 import React from 'react';
 import Carousel from './Carusel_ofertas/carousel';
 import OfertaHome from './Ofertas/OfertasHome/ofertasHome';
+import OfertaHomeAbajo from './Ofertas/OfertasHome/ofertasHomeAbajo';
 import Banner_Promocion from './BannerPromociones/BannerPromocion'
 import './home.scss'
 
@@ -32,6 +33,7 @@ export default function Home(props) {
 			</div> */}
 			<OfertaHome/>
 			<Banner_Promocion />
+			<OfertaHomeAbajo/>
 			{/* <ConsultaProductos propiedades={props} /> */}
             {/* <Datos_tienda /> */}
 		</div>
