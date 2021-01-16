@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {  Layout, Menu } from 'antd';
+import {  Divider, Layout, Menu } from 'antd';
 import { withRouter } from 'react-router-dom';
 import './categorias.scss';
 import './preloading.scss';
@@ -59,10 +59,9 @@ const Categorias = (props) => {
 	const categorias_nav = categorias.map((categoria) => {
 		return (
 			<SubMenu
-				mode="vertical"
 				key={categoria.categoria}
 				title={categoria.categoria}
-				// className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat"
+				className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat"
 				onTitleClick={(e) => {
 					if(e.key === categoria.categoria){
 						props.history.push(`/categorias/${categoria.categoria}`);
@@ -71,16 +70,16 @@ const Categorias = (props) => {
 					}
 					
 				}}
+
 			>
 				{categoria.subcCategoria.map((sub) => {
 					return (
 						<Menu.Item
-							// /* className="nav-font-color-categorias" */
+							/* className="nav-font-color-categorias" */
 							key={sub._id}
 							onClick={() => {
 								props.history.push(`/categorias/${categoriaSeleccionada}/${sub._id}`);
 								setSubcategoriaSeleccionada(sub._id);
-
 							}}
 						>
 							{sub._id}
@@ -88,13 +87,13 @@ const Categorias = (props) => {
 					);
 				})}
 			</SubMenu>
+			// 
 		);
 	});
 
 	const categorias_generos = generos.map((generos) => {
 		return (
 			<Menu.Item
-				mode="vertical"
 				/* className="nav-font-color-categorias " */
 				key={generos._id}
 				onClick={() => {
@@ -106,6 +105,7 @@ const Categorias = (props) => {
 						props.history.push(`/categoria/${categoriaSeleccionada}/${subcategoriaSeleccionada}/${generos._id}`)
 					}
 				}}
+				
 			>
 				{generos._id}
 			</Menu.Item>
@@ -113,36 +113,26 @@ const Categorias = (props) => {
 	});
 
 	return (
-		<Layout className="container-subcategorias-nav size-layout-cat navbar-menu-general" >
-			{/* className="container-subcategorias-nav d-lg-inline size-layout-cat" */}
+		<Layout className="container-subcategorias-nav d-lg-inline size-layout-cat">
 			{/* <Spin className="ml-5 d-inline spin-nav-categorias" spinning={loading} /> */}
-				{/* <div className="border-departamento">
-					<h6 className="text-center" style={{marginTop: 10}}>Departamentos</h6>
-				</div> */}
-				<Menu
-					inlineCollapsed={false}
-					className="nav-font-color navbar-menu-general"
-				>
-				<SubMenu
-					title="Categorias"
-					className="d-inline size-menu-cat nav-font-color nav-border-color"
-					defaultSelectedKeys={[ window.location.pathname ]}
-					triggerSubMenuAction="click"
-				>				
-						{categorias_nav}
-						{generos.length !== 0 ? (
-							<SubMenu 
-								title="Género"
-								mode="vertical"
-								className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat"
-							>
-								{categorias_generos}
-							</SubMenu>
-						) : (
-							<Menu.Item className="d-none" />
-						)}
-				</SubMenu>
-				</Menu>
+			<Menu
+				className="categorias-navbar d-inline size-menu-cat"
+				theme="light"
+				mode="horizontal"
+				defaultSelectedKeys={[ window.location.pathname ]}
+				triggerSubMenuAction="click"
+			>
+				{categorias_nav}
+				{generos.length !== 0 ? (
+					<SubMenu title="Género" className="submenu-categoria nav-font-color-categorias container-subcategorias-nav size-submenu-cat">
+						{categorias_generos}
+					
+
+					</SubMenu>
+				) : (
+					<Menu.Item className="d-none" />
+				)}
+			</Menu>
 		</Layout>
 	);
 };

@@ -3,6 +3,7 @@ import React from 'react';
 import Carousel from './Carusel_ofertas/carousel';
 import OfertaHome from './Ofertas/OfertasHome/ofertasHome';
 import OfertaHomeAbajo from './Ofertas/OfertasHome/ofertasHomeAbajo';
+import OfertasCentral from './Ofertas/OfertaCentral/ofertasCentral';
 import Banner_Promocion from './BannerPromociones/BannerPromocion'
 import './home.scss'
 
@@ -34,6 +35,7 @@ export default function Home(props) {
 			<OfertaHome/>
 			<Banner_Promocion />
 			<OfertaHomeAbajo/>
+			<OfertasCentral />
 			{/* <ConsultaProductos propiedades={props} /> */}
             {/* <Datos_tienda /> */}
 		</div>

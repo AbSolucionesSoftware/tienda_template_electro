@@ -17,7 +17,7 @@ function ConsultaOfertas(props) {
 	async function obtenerProductos() {
 		setLoading(true);
 		await clienteAxios
-			.get(`/productos/promociones?limit=${6}&page=${1}`)
+			.get(`/productos/promociones?limit=${4}&page=${1}`)
 			.then((res) => {
 				setProductos(res.data.posts.docs);
 				setLoading(false);

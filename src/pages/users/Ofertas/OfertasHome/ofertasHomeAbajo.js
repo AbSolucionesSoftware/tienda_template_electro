@@ -24,7 +24,7 @@ function OfertasHomeAbajo() {
                     </Link>
                 </div>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 mt-3">
                 <OfertaEspecial />
             </div>
         </Row>

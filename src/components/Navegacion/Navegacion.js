@@ -122,9 +122,7 @@ const Navegacion = (props) => {
 				<div className="menuCon  a2">
 					<div className="top-menu row a3 container-prin">
 						
-						{/* <div className="col-lg-4 containe-categorias">
-							<Categorias/>
-						</div> */}
+						
 						<div className="col-lg-12 container-pages a4">
 							<Menu
 								className="float-right nav-font-pages a5"
@@ -342,9 +340,6 @@ const Navegacion = (props) => {
 								</Badge>
 							</div>
 						)}
-						<div className="col-lg-3 containe-categorias">
-							<Categorias/>
-						</div>
 					</div>
 					<Drawer
 						className="drawer-background"
@@ -374,15 +369,17 @@ const Navegacion = (props) => {
 			</Header>
 		</Layout>
 
-		<Layout className="layout navbar-menu-general a00">
+		{/* <Layout className="layout navbar-menu-general a00">
 			<Header className="navbar-menu-general a1">
 				<div className="menuCon navbar-menu-general a2">
 					<div className="top-menu row a3 container-prin">
-
+						<div className="col-lg-12 containe-categorias">
+							<Categorias />
+						</div>
 					</div>
 				</div>
 			</Header>
-		</Layout>
+		</Layout> */}
 
 		</div>
 	);

@@ -1,18 +1,17 @@
 .categorias-navbar{
-    //  height: 40px; 
+    /* height: 40px; */
     /* display: flex; */
     border: none;
 }
 .spin-nav-categorias{
-    width: 50px;
+    width: 20px;
 }
+
 .size-layout-cat{
-    height: 100%;
-    width: 210px;
+    height: 30px;
 }
 .size-menu-cat{
-    height: 50%;
-    width: 260px;
+    height: 100%;
     line-height: normal;
 }
 .size-submenu-cat{
@@ -26,5 +25,4 @@
 .size-submenu-cat > .ant-menu-submenu-title {
     font-weight: 300;
 }
-
 

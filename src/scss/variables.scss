@@ -13,9 +13,9 @@ $font-color-navbar-hover: #2222a8;
 $font-color-navbar-active: #2222a8;
 
 /* NAVBAR CATEGORIAS VARIABLES */
-$bg-color-navbar-categorias:  #ffffff;
-$font-color-navbar-categorias: rgb(0, 0, 0);
-$font-color-navbar-categorias-hover: #f9fafb;
+$bg-color-navbar-categorias:  #2222a8;
+$font-color-navbar-categorias: rgb(255, 255, 255);
+$font-color-navbar-categorias-hover: #0050e6;
 
 /* CARDS VARIABLES */
 $bg-color-cards-productos:  #F7F7F7;
@@ -115,9 +115,11 @@ p, a, li{
 /* NAVBAR CATEGORIAS STYLES */
 .categorias-navbar{
     background-color: $bg-color-navbar-categorias;
+    
 }
 .categorias-navbar .ant-menu-submenu-title{
     color: $font-color-navbar-categorias!important;
+    font-weight: bold!important;
 }
 .categorias-navbar > .ant-menu-submenu-selected{
     color: $font-color-navbar-categorias!important;
@@ -128,8 +130,7 @@ p, a, li{
     // border: solid $bg-color-navbar-categorias;
 }
 .nav-font-color-categorias{
-  font-weight: bold;
-
+    font-weight: bold;
     color: $font-color-navbar-categorias;
     border-bottom: none!important;
 } 
@@ -150,7 +151,7 @@ p, a, li{
 }
 
 //COLOR DE BORDES DE LAS CARDS
-.contenedor-card-producto-principal{
+.contenedor-card-producto-principal, .contenedor-card-producto-secundario{
     border-right: 1px solid #e0e0e0;
 }
 
@@ -168,7 +169,7 @@ p, a, li{
 
 /* CARDS */
 .contenedor-card-body > .ant-card-body{
-    padding: 10px;
+    padding: 0px!important;
     // background-color: $bg-color-cards-productos; 
     min-height: 90px;
 }

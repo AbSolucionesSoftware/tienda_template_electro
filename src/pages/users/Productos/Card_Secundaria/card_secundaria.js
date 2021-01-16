@@ -1,25 +1,25 @@
 import React from 'react';
-import aws from '../../../config/aws';
+import aws from '../../../../config/aws';
 // import DOMPurify from 'dompurify';
 import { Card, Button } from 'antd';
 import { Link } from 'react-router-dom';
-
+import './productos.scss';
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import { formatoMexico, agregarPorcentaje } from '../../../config/reuserFunction';
+import { formatoMexico, agregarPorcentaje } from '../../../../config/reuserFunction';
 
-const gridStyle = { width: '100%', padding: 0, marginBottom: '1.5rem' };
+const gridStyle = { width: '100%', marginBottom: '1.5rem' };
 
-export default function ComponenteProductos(props) {
+export default function CardSecundaria(props) {
 	const { productos } = props;
 
 	if (productos.precioPromocion) {
 		return (
-			<div key={productos._id} className="size-col col-lg-2 col-6">
+			<div key={productos._id} className="size-col col-lg-3 col-6">
 				<Link to={`/vista_producto/${productos.productoPromocion._id}`}>
 					<Card
 						hoverable 
 						style={gridStyle} 
-						className="contenedor-card-producto-principal" 
+						className="contenedor-card-producto-secundario" 
 						bordered={false}
 					>
 						<div className="contenedor-oferta">
@@ -30,6 +30,9 @@ export default function ComponenteProductos(props) {
 								)}%OFF
 							</p>
 						</div>
+						<div className="contenedor-titulos-productos-sec titulo-elipsis">
+							<h1 className="titulo-producto">{productos.productoPromocion.nombre}</h1>
+						</div>	
 						<Card
 							bordered={false}
 							cover={
@@ -38,7 +41,7 @@ export default function ComponenteProductos(props) {
 										{/* <div className="contenedor-oferta">
 											<h5 className="shadow">OFERTA</h5>
 										</div> */}
-										<div className="contenedor-imagen-producto-principal">
+										<div className="contenedor-imagen-producto-secundario">
 											<img
 												className="imagen-producto-principal"
 												alt="producto"
@@ -48,15 +51,8 @@ export default function ComponenteProductos(props) {
 									</div>
 								</div>
 							}
+							className="margen"
 						>
-							<div className="contenedor-titulos-productos titulo-elipsis">
-								<h1 className="titulo-producto">{productos.productoPromocion.nombre}</h1>
-								{/* <div
-									dangerouslySetInnerHTML={{
-										__html: DOMPurify.sanitize(productos.productoPromocion.descripcion)
-									}}
-								/> */}
-							</div>						
 							<div className="contenedor-precios-productos">
 								<h2 className="h5 precio-producto rebajado mr-2">
 									${formatoMexico(productos.productoPromocion.precio)}
@@ -66,15 +62,15 @@ export default function ComponenteProductos(props) {
 								</h3>
 								
 							</div>
+							<div className="d-flex flex-row-reverse">
+								<Button
+									size="large"
+									shape="circle"
+									className="color-boton" 
+									icon={<ShoppingCartOutlined style={{fontSize: 25}}/>} 
+								/>
+							</div>
 						</Card>
-						<div className="d-flex flex-row-reverse">
-							<Button
-								size="large"
-								shape="circle"
-								className="color-boton" 
-								icon={<ShoppingCartOutlined style={{fontSize: 25}}/>} 
-							/>
-						</div>
 					</Card>
 				</Link>
 			</div>
@@ -86,7 +82,7 @@ export default function ComponenteProductos(props) {
 					<Card
 						hoverable 
 						style={gridStyle} 
-						className="contenedor-card-producto-principal" 
+						className="contenedor-card-producto-secundario" 
 						bordered={false}
 					>
 						{productos.promocion.length !== 0 ? (
@@ -104,12 +100,14 @@ export default function ComponenteProductos(props) {
 						) : (
 							<div className="d-none" />
 						)}
-
+						<div className="contenedor-titulos-productos-sec titulo-elipsis">
+							<h1 className="titulo-producto">{productos.nombre}</h1>
+						</div>	
 						<Card
 							bordered={false}
 							cover={
 								<div className="contenedor-imagen-oferta">									
-									<div className="contenedor-imagen-producto-principal">
+									<div className="contenedor-imagen-producto-secundario">
 										<img
 											className="imagen-producto-principal"
 											alt="producto"
@@ -118,15 +116,9 @@ export default function ComponenteProductos(props) {
 									</div>
 								</div>
 							}
+							className="margen"
 						>
-							<div className="contenedor-titulos-productos titulo-elipsis">
-								<h1 className="titulo-producto">{productos.nombre}</h1>
-								{/* <div
-									dangerouslySetInnerHTML={{
-										__html: DOMPurify.sanitize(productos.descripcion)
-									}}
-								/> */}
-							</div>
+							
 							{!productos.promocion.length ? (
 								<div className="contenedor-precios-productos">
 									<h3 className="">${formatoMexico(productos.precio)}</h3>
@@ -145,18 +137,18 @@ export default function ComponenteProductos(props) {
 									);
 								})
 							)}
+							<div className="d-flex flex-row-reverse">
+								<Button
+									size="large"
+									shape="circle"
+									className="color-boton" 
+									icon={< ShoppingCartOutlined
+											style={{ fontSize: 25 }}
+										/>
+									} 
+								/>
+							</div>
 						</Card>
-						<div className="d-flex flex-row-reverse">
-							<Button
-								size="large"
-								shape="circle"
-								className="color-boton" 
-								icon={< ShoppingCartOutlined
-										style={{ fontSize: 25 }}
-									/>
-								} 
-							/>
-						</div>
 					</Card>
 				</Link>
 			</div>

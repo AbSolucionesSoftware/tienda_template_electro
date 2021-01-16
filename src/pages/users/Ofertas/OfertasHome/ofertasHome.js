@@ -12,7 +12,7 @@ function OfertasHome() {
     return (
 		<div className="d-flex justify-content-center align-items-center">
         <Row gutter={10} style={{ maxWidth: '95vw' }} className=" mt-4">
-            <div className="col-lg-3">
+            <div className="col-lg-3 mt-3">
                 <OfertaEspecial />
             </div>
             <div className="col-lg-9">
