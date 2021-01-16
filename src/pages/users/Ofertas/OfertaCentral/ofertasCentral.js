@@ -19,7 +19,6 @@ function OfertasCentral() {
                     <OfertaEspecial />
                 </div>
                 <div className="col-lg-1">
-
                 </div>
                 <div className="col-lg-4">
                     <ConsultaOfertas />
