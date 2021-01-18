@@ -6,6 +6,7 @@ import OfertasDerecha from './Ofertas/OfertasHome/ofertasDerecha';
 import OfertasCentral from './Ofertas/OfertaCentral/ofertasCentral';
 import OfertasGigantes from './Ofertas/OfertaGigante/ofertasGigantes'
 import Banner_Promocion from './BannerPromociones/BannerPromocion';
+import BannerInformativo from './Datos_tienda/banner_informativo';
 import './home.scss'
 
 /* import ConsultaProductos from './Productos/consulta_productos'; */
@@ -38,6 +39,7 @@ export default function Home(props) {
 			<OfertasGigantes />
 			<OfertasDerecha/>
 			<OfertasCentral />
+			<BannerInformativo />
 			{/* <ConsultaProductos propiedades={props} /> */}
             {/* <Datos_tienda /> */}
 		</div>
