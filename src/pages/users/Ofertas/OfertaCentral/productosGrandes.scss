@@ -1,0 +1,121 @@
+// .principal-productos{
+//     color: rgb(255, 255, 255);
+//     text-align: center;
+//     background-color: rgb(255, 255, 255);
+//     padding: 15px;
+//     font-size: 25px;
+//     letter-spacing: 20px;
+//     font-weight: bold;
+//     width: 100%;
+// }
+.banner-producto{
+    max-width: 100%;
+}
+.titulo-producto{
+    width: 100%;
+}
+.titulo-elipsis{
+    // padding: 5px;
+    height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* .descripcion-producto{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+} */
+
+.ant-col{
+    width: 300px;
+}
+.size-col{
+    min-width: 190px;
+}
+.contenedor-card-producto-secundario{
+    // border-right: 1px solid #e0e0e0;
+    cursor: pointer;
+    padding-bottom: 0px!important;
+    padding-left: 0px!important;
+    padding: 0px!important;
+}
+.conta-card-sec{
+    padding-left: 0px!important;
+}
+.contenedor-imagen-oferta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-oferta{
+    top: 0;
+    left: 0;
+}
+.contenedor-card-producto-secundario:hover .titulo-elipsis{
+    height: 60px;
+    transition-duration: .2s;
+    transition-delay: .3s;
+    
+    /* transition: ease-out .2s; */
+}
+.contenedor-imagen-producto-secundario{
+    height: 180px; 
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen-producto-principal{
+    max-width: 100%;
+    max-height: 100%;
+}
+.rebajado{
+    font-size: 15px;
+}
+.contenedor-oferta{
+    position: absolute;
+}
+.contenedor-oferta > h5{
+    background-color: rgb(255, 210, 62);
+    color: rgb(255, 0, 0);
+    width: 85px;
+    margin: 0;
+}
+.contenedor-oferta > p{
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(238, 155, 0);
+    width: 45px;
+}
+.contenedor-titulos-productos-sec > h1 {
+    font-size: 16px;
+}
+.contenedor-precios-productos > h2 {
+    font-size: 15px;
+}
+.contenedor-precios-productos > h3 {
+    font-size: 22px;
+}
+.contenedor-precios-productos > p {
+    font-size: 15px!important;
+}
+@media(max-width: 768px){
+    .contenedor-imagen-producto-principal{
+        height: 20px; 
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .size-col{
+        min-width: 10px;
+    }
+}
+.card-precio-rebaja{
+    color:red;
+}
+.margen > .ant-card-body{
+    padding: 0px!important;
+}
+
+

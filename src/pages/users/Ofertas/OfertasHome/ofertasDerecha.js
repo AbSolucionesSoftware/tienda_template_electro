@@ -2,13 +2,12 @@ import React from 'react'
 import { Tabs, Row } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 
-import OfertaEspecial from './ofertaEspecial';
+import ConsultaOfertasEspecial from './consultaOfertaEspecial';
 import ConsultaOfertas from './consultaOfertas'
-// import Productos from '../../Productos/productos'
 
 const { TabPane } = Tabs;
 
-function OfertasHomeAbajo() {
+function  OfertasDerecha() {
     return (
 		<div className="d-flex justify-content-center align-items-center">
         <Row gutter={10} style={{ maxWidth: '95vw' }} className=" mt-4">
@@ -25,11 +24,11 @@ function OfertasHomeAbajo() {
                 </div>
             </div>
             <div className="col-lg-3 mt-3">
-                <OfertaEspecial />
+                <ConsultaOfertasEspecial />
             </div>
         </Row>
         </div>
     )
 }
 
-export default withRouter(OfertasHomeAbajo);
+export default withRouter( OfertasDerecha);

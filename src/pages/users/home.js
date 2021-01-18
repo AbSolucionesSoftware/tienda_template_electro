@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import Carousel from './Carusel_ofertas/carousel';
-import OfertaHome from './Ofertas/OfertasHome/ofertasHome';
-import OfertaHomeAbajo from './Ofertas/OfertasHome/ofertasHomeAbajo';
+import OfertasIzquierda from './Ofertas/OfertasHome/ofertasIzquierda'
+import OfertasDerecha from './Ofertas/OfertasHome/ofertasDerecha';
 import OfertasCentral from './Ofertas/OfertaCentral/ofertasCentral';
-import Banner_Promocion from './BannerPromociones/BannerPromocion'
+import OfertasGigantes from './Ofertas/OfertaGigante/ofertasGigantes'
+import Banner_Promocion from './BannerPromociones/BannerPromocion';
 import './home.scss'
 
 /* import ConsultaProductos from './Productos/consulta_productos'; */
@@ -32,10 +33,11 @@ export default function Home(props) {
 					</div>
 				</div>
 			</div> */}
-			<OfertaHome/>
+			<OfertasIzquierda />
 			<Banner_Promocion />
-			<OfertaHomeAbajo/>
-			{/* <OfertasCentral /> */}
+			<OfertasGigantes />
+			<OfertasDerecha/>
+			<OfertasCentral />
 			{/* <ConsultaProductos propiedades={props} /> */}
             {/* <Datos_tienda /> */}
 		</div>

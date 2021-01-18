@@ -3,10 +3,10 @@ import clienteAxios from '../../../../config/axios';
 import { Result, Row } from 'antd';
 import {withRouter } from 'react-router-dom';
 import '../ofertas.scss';
-import ComponenteProductoGrande from '../../Productos/Card_Gigante/componente_producto_grande';
+import CardProductoGigante from '../../Productos/Cards_Gigantes/card_producto_gigante';
 import Spin from '../../../../components/Spin';
 
-function OfertasEspecial(props) {
+function ConsultaOfertaGigante (props) {
 	const [ productos, setProductos ] = useState([]);
 	const [ loading, setLoading ] = useState(false);
 
@@ -28,7 +28,7 @@ function OfertasEspecial(props) {
 	}
 
 	const render = productos.map((productos) => (
-		<ComponenteProductoGrande key={productos._id} productos={productos} />
+		<CardProductoGigante key={productos._id} productos={productos} />
 	));
 
 	if(productos.length === 0){
@@ -54,4 +54,4 @@ function OfertasEspecial(props) {
 	);
 }
 
-export default withRouter(OfertasEspecial);
+export default withRouter( ConsultaOfertaGigante );

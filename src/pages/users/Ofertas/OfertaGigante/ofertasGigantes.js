@@ -1,23 +1,21 @@
 import React from 'react'
-import { Tabs, Row } from 'antd';
-import { Link, withRouter } from 'react-router-dom';
-import ConsultaOfertaEspecial from '../OfertasHome/consultaOfertaEspecial';
+import { Row } from 'antd';
+import { withRouter } from 'react-router-dom';
+import ConsultaOfertaGigante from './consultaOfertaGigante'
 import ConsultaOfertas from './consultaOfertas'
 // import Productos from '../../Productos/productos'
 
-const { TabPane } = Tabs;
-
-function OfertasCentral() {
+function OfertasGigantes() {
     return (
 		<div className="d-flex justify-content-center align-items-center">
             <Row gutter={10} style={{ maxWidth: '95vw' }} className="mt-4">
-                <div className="col-lg-4">
+                <div className="col-lg-3">
                     <ConsultaOfertas />
                 </div>
-                <div className="col-lg-4 mt-5">
-                    <ConsultaOfertaEspecial />
+                <div className="col-lg-6 mt-5">
+                    <ConsultaOfertaGigante/>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-3">
                     <ConsultaOfertas />
                 </div> 
             </Row>
@@ -25,4 +23,4 @@ function OfertasCentral() {
     )
 }
 
-export default withRouter(OfertasCentral);
+export default withRouter(OfertasGigantes);

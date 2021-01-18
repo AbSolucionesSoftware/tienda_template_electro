@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import clienteAxios from '../../../../config/axios';
 import { Result, Row } from 'antd';
-import {withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import '../ofertas.scss';
-import ComponenteProductoGrande from '../../Productos/Card_Gigante/componente_producto_grande';
+import CardSecundaria from './card_secundaria';
 import Spin from '../../../../components/Spin';
 
-function OfertasEspecial(props) {
+function ConsultaOfertas(props) {
 	const [ productos, setProductos ] = useState([]);
 	const [ loading, setLoading ] = useState(false);
 
@@ -17,7 +17,7 @@ function OfertasEspecial(props) {
 	async function obtenerProductos() {
 		setLoading(true);
 		await clienteAxios
-			.get(`/productos/promociones?limit=${1}&page=${1}`)
+			.get(`/productos/promociones?limit=${2}&page=${1}`)
 			.then((res) => {
 				setProductos(res.data.posts.docs);
 				setLoading(false);
@@ -28,7 +28,7 @@ function OfertasEspecial(props) {
 	}
 
 	const render = productos.map((productos) => (
-		<ComponenteProductoGrande key={productos._id} productos={productos} />
+		<CardSecundaria key={productos._id} productos={productos} />
 	));
 
 	if(productos.length === 0){
@@ -38,20 +38,18 @@ function OfertasEspecial(props) {
 	return (
 		<Spin spinning={loading}>
 			<div className="d-flex justify-content-center align-items-center">
-				<div className="">
-					<Row gutter={10} style={{ maxWidth: '95vw' }} className=" mt-4">
-						{productos.length ? (
-							render
-						) : (
-							<div className="w-100 d-flex justify-content-center align-items-center">
-								<Result status="404" title="Aun no hay ofertas" />
-							</div>
-						)}
-					</Row>
-				</div>
+				<Row gutter={5} style={{ maxWidth: '90vw' }} className=" mt-4">
+					{productos.length ? (
+						render
+					) : (
+						<div className="w-100 d-flex justify-content-center align-items-center">
+							<Result status="404" title="Aun no hay ofertas" />
+						</div>
+					)}
+				</Row>
 			</div>
 		</Spin>
 	);
 }
 
-export default withRouter(OfertasEspecial);
+export default withRouter(ConsultaOfertas);
