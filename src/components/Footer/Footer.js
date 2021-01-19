@@ -128,7 +128,7 @@ const FooterPage = (props) => {
                             <div className="row mt-3">
                                 <PhoneOutlined className="mt-1" style={{fontSize: 55, marginLeft: 5}} />
                                 <div className="px-3">
-                                    <p>Tienes preguntas? Contactanos!:</p> 
+                                    <p>¿Tienes preguntas? ¡Contáctanos!:</p> 
                                     {telefono !== '' ? (<h1 style={{fontSize: 20}}>{telefono} </h1>): ""}
                                 </div>
                             </div>
@@ -168,13 +168,13 @@ const FooterPage = (props) => {
                             </div>
                         </div>
                         <div className="col-lg-6 mt-lg-4 d-none d-lg-block ">
-                            <p style={{fontWeight: "bold"}}>Encuentralo mas rapido</p>
+                            <p style={{fontWeight: "bold"}}>Encuéntralo más rápido</p>
                             <div style={{columnCount: 2}}>
                                 {categorias_foot}
                             </div>
                         </div>
                         <div className="col-lg-2 mt-4 d-none d-lg-block" style={{columnCount: 1}}>
-                           <p style={{fontWeight: "bold"}}>Atencion al cliente</p>
+                           <p style={{fontWeight: "bold"}}>Atención al cliente</p>
                            {imagenCorp !== '' ? (
                                 <Link  to="/quienes_somos" >
                                     <Button className="footer-font-color" id="is" type="link" style={Style} ><UserOutlined className="footer-font-color"/>
@@ -207,9 +207,9 @@ const FooterPage = (props) => {
                         </div>
                     </div> 
                 </div>
-                <div className="align-center">
+                {/* <div className="align-center">
                     <p className="text-center">© CAFI - All Rights Reserved - 2020</p>
-                </div>
+                </div> */}
              </Footer>
          </Layout>
     )
