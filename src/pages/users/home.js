@@ -36,9 +36,9 @@ export default function Home(props) {
 			</div> */}
 			<OfertasIzquierda />
 			<Banner_Promocion />
-			<OfertasGigantes />
+			{/* <OfertasGigantes /> */}
 			<OfertasDerecha/>
-			<OfertasCentral />
+			{/* <OfertasCentral /> */}
 			<BannerInformativo />
 			{/* <ConsultaProductos propiedades={props} /> */}
             {/* <Datos_tienda /> */}

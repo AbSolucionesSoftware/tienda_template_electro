@@ -39,13 +39,12 @@ function ConsultaOfertasEspecial(props) {
 				return <CardSecundaria  key={productos._id} productos={productos}/>
 			}
 		}else{
-
-		if(index === 0){
-			return  <ComponenteProductoGrande key={productos._id} productos={productos} />
-		}else{
-			return <CardSecundaria  key={productos._id} productos={productos}/>
+			if(index === 0){
+				return  <ComponenteProductoGrande key={productos._id} productos={productos} />
+			}else{
+				return <CardSecundaria  key={productos._id} productos={productos}/>
+			}
 		}
-	}
 
 	});
 		
